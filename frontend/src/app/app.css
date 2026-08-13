@@ -29,12 +29,12 @@
   margin: 30px auto;
 }
 
-.message {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
+.message-content small {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  opacity: 0.6;
 }
-
 .avatar {
   font-size: 30px;
 }

@@ -23,9 +23,13 @@
 
           <strong>{{ msg.sender }}</strong>
 
-          <p>{{ msg.text }}</p>
+    <p>{{ msg.text }}</p>
 
-        </div>
+          <small>
+              {{ msg.timestamp | date:'shortTime' }}
+          </small>
+
+      </div>
 
       </div>
 
