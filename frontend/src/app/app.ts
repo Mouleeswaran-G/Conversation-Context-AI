@@ -1,12 +1,46 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('frontend');
+
+  message = '';
+
+  messages = [
+    {
+      sender: 'AI',
+      text: 'Hello! How can I help you today?'
+    }
+  ];
+
+  sendMessage() {
+
+  if (this.message.trim() === '') {
+    return;
+  }
+
+  const userMessage = this.message;
+
+  this.messages.push({
+    sender: 'Moule',
+    text: userMessage
+  });
+
+  this.message = '';
+
+  setTimeout(() => {
+
+    this.messages.push({
+      sender: 'AI',
+      text: 'Got it! Tell me more.'
+    });
+
+  }, 500);
+
+}
 }
